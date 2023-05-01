@@ -1,0 +1,8 @@
+## Notes on the UI
+
+This is not really a "game" in the sense of fast moving realtime graphics and sprites.
+So the decision is to see if we can do this in tkinter, which is the defacto python way to make GUI's.
+
+## Notes on game board logic
+
+We can use the old attempts logic. Danny has multiple versions, Pheobe has a scratch version.
