@@ -11,12 +11,12 @@ class Board:
     WIDTH = 3
     HEIGHT = 3
 
-    def __init__(self) -> None:
-        self.reset()
+    def __init__(self, starting_player=CROSS) -> None:
+        self.reset(starting_player)
 
-    def reset(self) -> None:
+    def reset(self, starting_player) -> None:
         self.board = [[Board.EMPTY] * self.WIDTH] * self.HEIGHT
-        self.turn = random.choice([Board.NOUGHT, Board.CROSS])
+        self.turn = starting_player
 
     def next_turn(self) -> int:
         """Advance the turn and return the new player."""
