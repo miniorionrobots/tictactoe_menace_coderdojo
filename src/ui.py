@@ -3,12 +3,6 @@ import tkinter as tk
 root = tk.Tk()
 root.title("TicTacToe!")
 
-HEIGHT = 600
-WIDTH = 600
-
-# todo - centre
-root.geometry(f"{HEIGHT}x{WIDTH}")
-
 # we'll want some kind of game board widget
 # top: current player
 
@@ -23,6 +17,17 @@ current_player.pack()
 #   - the function checks for a win or draw
 #   - the function updates the ui
 #   - invalid location buttons are disabled
+
+CELL_SPACING = 4
+
+board = tk.Frame(root, bg="black")
+board.pack()
+from random import choice
+for row in range(3):
+    for col in range(3):
+        cell = tk.Button(board, text=choice(["X", "O", "  "]))
+        cell.grid(row=row, column=col, padx=CELL_SPACING, pady=CELL_SPACING)
+
 
 # bottom: status message
 status_message = tk.Label(root, text="Status: Playing")
